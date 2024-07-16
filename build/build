@@ -12,11 +12,12 @@ mkdir -p releases
 # Manual build release based on Terraform docs.
 prepare_release() {
     go build -buildvcs=false -o /tmp/main_linux_amd64
-    mv /tmp/main_linux_amd64 main_v${REL_VER}
-    zip releases/main_${REL_VER}_linux_amd64.zip LICENSE README.md main_v${REL_VER}
-    rm main_v${REL_VER}
-    cp test-manifest.json releases/main_${REL_VER}_manifest.json
-    cd releases && sha256sum *zip main_${REL_VER}_manifest.json > main_${REL_VER}_SHA256SUMS
+    mv /tmp/main_linux_amd64 devportal-comp_v${REL_VER}.qcow2
+    zip releases/devportal-comp_${REL_VER}_linux_amd64.zip devportal-comp_v${REL_VER}.qcow2
+    #zip releases/main_${REL_VER}_linux_amd64.zip LICENSE README.md main_v${REL_VER}
+    #rm main_v${REL_VER}
+    #cp test-manifest.json releases/main_${REL_VER}_manifest.json
+    #cd releases && sha256sum *zip main_${REL_VER}_manifest.json > main_${REL_VER}_SHA256SUMS
 }
 
 prepare_release
