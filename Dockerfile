@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9/go-toolset:1.19.13-4.1697647145
+FROM registry.access.redhat.com/ubi9/go-toolset:1.21.11-2.1720624888
 WORKDIR /opt/app-root/src
 COPY . .
 RUN  git config --global --add safe.directory /opt/app-root/src
