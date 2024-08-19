@@ -28,8 +28,6 @@ spec:
     value: 5d
   - name: dockerfile
     value: docker/Dockerfile
-  - name: path-context
-    value: .
   pipelineSpec:
     finally:
     - name: show-sbom
